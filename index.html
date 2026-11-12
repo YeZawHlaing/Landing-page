@@ -9,15 +9,23 @@
 <body>
 
     <!-- =========================================
-         SECTION 1: NAVIGATION BAR
-         Links directly to the sections below
+         SECTION 1: FLOATING GLASSMORPHISM NAVBAR
+         Responsive for PC and Mobile
     ========================================== -->
     <div id="navbar-section">
         <nav class="navbar">
             <div class="logo">
                 <a href="#header-section">LOOP</a>
             </div>
-            <ul class="nav-links">
+
+            <!-- Hamburger Menu Button (Visible on Mobile) -->
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links" id="nav-links">
                 <li><a href="#header-section">Home</a></li>
                 <li><a href="#service-pos">POS</a></li>
                 <li><a href="#service-web">Websites</a></li>
@@ -29,91 +37,120 @@
     </div>
 
     <!-- =========================================
-         SECTION 2: HEADER (CAROUSEL)
-         Simple rotating banner for Loop
+         SECTION 2: HEADER (PREMIUM 3D CAROUSEL)
+         Features cinematic lighting, floating particles, 
+         and staggered, cinematic text enter animations.
     ========================================== -->
-    <div id="header-section">
+    <div id="header-section" class="reveal reveal-fade">
         <header class="carousel">
+            <!-- Animated Particle Layers for 3D Atmosphere -->
+            <div class="carousel-particles"></div>
+            <div class="carousel-glow"></div>
             
             <!-- Slide 1 -->
             <div class="slide active">
-                <h1>Scale Your Startup with Loop</h1>
-                <p>All-in-one SaaS and digital infrastructure built for modern businesses.</p>
-                <a href="#content-section" class="btn">Explore Services</a>
+                <div class="slide-content">
+                    <span class="slide-tag text-reveal-delay-1">STARTUP SOLUTIONS</span>
+                    <h1 class="text-reveal">Scale Your Startup<br>with <span class="brand-accent">Loop</span></h1>
+                    <p class="text-reveal-delay-2">All-in-one SaaS and digital infrastructure built for modern businesses.</p>
+                    <div class="text-reveal-delay-3">
+                        <a href="#content-section" class="btn btn-premium">Explore Services</a>
+                    </div>
+                </div>
             </div>
 
             <!-- Slide 2 -->
             <div class="slide">
-                <h1>End-to-End Digital Solutions</h1>
-                <p>From Point of Sale systems to scalable cloud architecture.</p>
-                <a href="#footer-section" class="btn">Get Started</a>
+                <div class="slide-content">
+                    <span class="slide-tag text-reveal-delay-1">END-TO-END</span>
+                    <h1 class="text-reveal">Digital Solutions,<br>Reimagined.</h1>
+                    <p class="text-reveal-delay-2">From Point of Sale systems to scalable, robust cloud architecture.</p>
+                    <div class="text-reveal-delay-3">
+                        <a href="#footer-section" class="btn btn-premium">Get Started</a>
+                    </div>
+                </div>
             </div>
 
             <!-- Slide 3 -->
             <div class="slide">
-                <h1>Custom Web & Mobile Experiences</h1>
-                <p>Clean code, fast performance, and tailored to your brand.</p>
-                <a href="#content-section" class="btn">See What We Build</a>
+                <div class="slide-content">
+                    <span class="slide-tag text-reveal-delay-1">FAST & SECURE</span>
+                    <h1 class="text-reveal">Custom Web &<br>Mobile Experiences</h1>
+                    <p class="text-reveal-delay-2">Clean code, rapid performance, and custom-tailored to your brand.</p>
+                    <div class="text-reveal-delay-3">
+                        <a href="#content-section" class="btn btn-premium">See What We Build</a>
+                    </div>
+                </div>
             </div>
 
             <!-- Carousel Controls -->
             <button class="prev-btn" onclick="changeSlide(-1)">&#10094;</button>
             <button class="next-btn" onclick="changeSlide(1)">&#10095;</button>
             
+            <!-- Sleek Progressive Indicator Dots -->
+            <div class="carousel-indicators">
+                <span class="indicator active" onclick="jumpToSlide(0)"></span>
+                <span class="indicator" onclick="jumpToSlide(1)"></span>
+                <span class="indicator" onclick="jumpToSlide(2)"></span>
+            </div>
         </header>
     </div>
 
     <!-- =========================================
          SECTION 3: CONTENT (ZIGZAG PATTERN)
-         Alternating Left/Right rows for services
+         Staggered bidirectionally animated rows
     ========================================== -->
     <div id="content-section">
         <main class="container">
 
             <!-- Row 1: Text Left, Image Right (POS) -->
             <div class="zigzag-row" id="service-pos">
-                <div class="zigzag-text">
+                <div class="zigzag-text reveal reveal-left">
                     <span class="caption">01 / RETAIL & HOSPITALITY</span>
                     <h2>Point of Sale (POS) Systems</h2>
                     <p>Streamline your checkout, track real-time inventory, and manage customer loyalty from a single, reliable interface designed for speed.</p>
+                    <a href="#footer-section" class="btn-text">Learn More &rarr;</a>
                 </div>
-                <div class="zigzag-image">
+                <div class="zigzag-image reveal reveal-right">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnbX6iyochM9jlyEAR8yxf1K4hKxLFFDboGlMbNoOmIw&s=10" alt="Loop POS System">
                 </div>
             </div>
 
             <!-- Row 2: Image Left, Text Right (Websites) -->
             <div class="zigzag-row reverse" id="service-web">
-                <div class="zigzag-text">
+                <div class="zigzag-text reveal reveal-right">
                     <span class="caption">02 / DIGITAL PRESENCE</span>
                     <h2>Custom Websites & Web Apps</h2>
                     <p>High-converting corporate websites, e-commerce platforms, and custom SaaS dashboards built with responsive, modern standards.</p>
+                    <a href="#footer-section" class="btn-text">Learn More &rarr;</a>
                 </div>
-                <div class="zigzag-image">
+                <div class="zigzag-image reveal reveal-left">
                     <img src="https://www.xavor.com/wp-content/uploads/2023/08/Custom-Web-Development-101.webp" alt="Loop Websites">
                 </div>
             </div>
 
             <!-- Row 3: Text Left, Image Right (Mobile Apps) -->
             <div class="zigzag-row" id="service-mobile">
-                <div class="zigzag-text">
+                <div class="zigzag-text reveal reveal-left">
                     <span class="caption">03 / IOS & ANDROID</span>
                     <h2>Mobile Applications</h2>
                     <p>Put your business in your customers' pockets. We design and deploy intuitive native and cross-platform mobile apps for startups.</p>
+                    <a href="#footer-section" class="btn-text">Learn More &rarr;</a>
                 </div>
-                <div class="zigzag-image">
+                <div class="zigzag-image reveal reveal-right">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPW6mErhG4Q5HzApnzj-RijHW1Uumfk7qeHjtyvx8lrw&s=10" alt="Loop Mobile Apps">
                 </div>
             </div>
 
             <!-- Row 4: Image Left, Text Right (Cloud & Digital Solutions) -->
             <div class="zigzag-row reverse" id="service-cloud">
-                <div class="zigzag-text">
+                <div class="zigzag-text reveal reveal-right">
                     <span class="caption">04 / INFRASTRUCTURE</span>
                     <h2>Cloud Services & Digital Solutions</h2>
                     <p>Secure cloud hosting, API integrations, database management, and custom automation tools to keep your operations running 24/7.</p>
+                    <a href="#footer-section" class="btn-text">Learn More &rarr;</a>
                 </div>
-                <div class="zigzag-image">
+                <div class="zigzag-image reveal reveal-left">
                     <img src="https://anynines.com/wp-content/uploads/2024/01/Header_Cloud_T_Ypes.jpg" alt="Loop Cloud Services">
                 </div>
             </div>
@@ -124,7 +161,7 @@
     <!-- =========================================
          SECTION 4: FOOTER (CONTACT INFO)
     ========================================== -->
-    <div id="footer-section">
+    <div id="footer-section" class="reveal reveal-up">
         <footer class="footer">
             <div class="footer-content">
                 <div class="footer-brand">
@@ -133,9 +170,9 @@
                 </div>
                 <div class="footer-contact">
                     <h4>Contact Us</h4>
-                    <p>Email: yezawhlaing0@gmail.com</p>
-                    <p>Phone: +95 9 683776164</p>
-                    <p>Address: Alone Township,Thidar Road,building 12/14 ,Yangon, Myanmar</p>
+                    <p class="footer-link-group">Email: <a href="mailto:yezawhlaing0@gmail.com">yezawhlaing0@gmail.com</a></p>
+                    <p class="footer-link-group">Phone: <a href="tel:+959683776164">+95 9 683776164</a></p>
+                    <p>Address: Alone Township, Thidar Road, Building 12/14, Yangon, Myanmar</p>
                 </div>
             </div>
             <div class="footer-bottom">

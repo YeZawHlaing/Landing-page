@@ -1,0 +1,277 @@
+/* =========================================
+   GLOBAL STYLES & VARIABLES
+   Change colors or fonts here easily
+========================================== */
+:root {
+    --bg-white: #ffffff;
+    --bg-black: #000000;
+    --text-black: #000000;
+    --text-white: #ffffff;
+    --border-gray: #cccccc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth; /* Smooth scrolling when clicking nav links */
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--bg-white);
+    color: var(--text-black);
+    line-height: 1.6;
+}
+
+/* =========================================
+   SECTION 1: NAVIGATION BAR
+========================================== */
+#navbar-section {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--bg-black);
+    border-bottom: 1px solid var(--bg-white);
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    color: var(--text-white);
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 3px;
+    border: 2px solid var(--bg-white);
+    padding: 5px 12px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: var(--text-white);
+    text-decoration: none;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================
+   SECTION 2: HEADER (CAROUSEL)
+========================================== */
+.carousel {
+    position: relative;
+    background-color: var(--bg-black);
+    color: var(--text-white);
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 60px;
+}
+
+.slide {
+    display: none; /* Hidden by default, JS toggles .active */
+    max-width: 700px;
+}
+
+.slide.active {
+    display: block;
+}
+
+.slide h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.slide p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #dddddd;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--bg-white);
+    color: var(--text-black);
+    padding: 12px 28px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    border: 2px solid var(--bg-white);
+}
+
+.btn:hover {
+    background-color: var(--bg-black);
+    color: var(--text-white);
+}
+
+/* Carousel Arrows */
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    color: var(--text-white);
+    border: 1px solid var(--bg-white);
+    font-size: 20px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background-color: var(--bg-white);
+    color: var(--text-black);
+}
+
+.prev-btn { left: 20px; }
+.next-btn { right: 20px; }
+
+/* =========================================
+   SECTION 3: CONTENT (ZIGZAG PATTERN)
+========================================== */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+.zigzag-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    margin-bottom: 80px;
+}
+
+.zigzag-row:last-child {
+    margin-bottom: 0;
+}
+
+/* Flips the order for even rows */
+.zigzag-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.zigzag-text {
+    flex: 1;
+}
+
+.zigzag-text .caption {
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    color: #555555;
+}
+
+.zigzag-text h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.zigzag-text p {
+    font-size: 16px;
+    color: #222222;
+}
+
+.zigzag-image {
+    flex: 1;
+}
+
+.zigzag-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 2px solid var(--bg-black);
+}
+
+/* =========================================
+   SECTION 4: FOOTER
+========================================== */
+.footer {
+    background-color: var(--bg-black);
+    color: var(--text-white);
+    padding: 60px 20px 20px 20px;
+}
+
+.footer-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #333333;
+}
+
+.footer-brand h3 {
+    font-size: 24px;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.footer-contact h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-contact p {
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 14px;
+    color: #aaaaaa;
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+========================================== */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .slide h1 {
+        font-size: 28px;
+    }
+
+    .zigzag-row, .zigzag-row.reverse {
+        flex-direction: column;
+        text-align: left;
+    }
+}
